@@ -42,6 +42,14 @@ class Vec2 implements IVec2 {
     scaleBy(n: number): Vec2 {
         return new Vec2(this.x * n, this.y * n);
     }
+
+    scaleXBy(n: number): Vec2 {
+        return new Vec2(this.x * n, this.y);
+    }
+
+    scaleYBy(n: number): Vec2 {
+        return new Vec2(this.x, this.y * n);
+    }
 }
 
 export {
