@@ -50,6 +50,31 @@ class Vec2 implements IVec2 {
     scaleYBy(n: number): Vec2 {
         return new Vec2(this.x, this.y * n);
     }
+
+    lerp(towards: IVec2, amount: number): Vec2 {
+        return new Vec2(
+            ((towards.x - this.x) * amount) + this.x,
+            ((towards.y - this.y) * amount) + this.y);
+    }
+
+    static limit(vector: IVec2, magnitude: number, max: number): IVec2 {
+        if (magnitude > max) {
+            // normalize
+            return this.prototype.divideBy.call(vector, magnitude).scaleBy(max);
+        } else {
+            return vector;
+        }
+    }
+
+    limit(max: number): Vec2 {
+        const magnitude = this.magnitude();
+        if (magnitude > max) {
+            // normalize
+            return this.divideBy(magnitude).scaleBy(max)
+        } else {
+            return this;
+        }
+    }
 }
 
 export {
