@@ -57,23 +57,17 @@ class Vec2 implements IVec2 {
             ((towards.y - this.y) * amount) + this.y);
     }
 
-    static limit(vector: IVec2, magnitude: number, max: number): IVec2 {
+    limitGivenMagnitude(magnitude: number, max: number): Vec2 {
         if (magnitude > max) {
             // normalize
-            return this.prototype.divideBy.call(vector, magnitude).scaleBy(max);
+            return this.divideBy(magnitude).scaleBy(max);
         } else {
-            return vector;
+            return this;
         }
     }
 
     limit(max: number): Vec2 {
-        const magnitude = this.magnitude();
-        if (magnitude > max) {
-            // normalize
-            return this.divideBy(magnitude).scaleBy(max)
-        } else {
-            return this;
-        }
+        return this.limitGivenMagnitude(this.magnitude(), max);
     }
 }
 

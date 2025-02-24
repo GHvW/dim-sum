@@ -5,9 +5,12 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest",
     "build": "tsc"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "vitest": "^3.0.7"
+  }
 }
