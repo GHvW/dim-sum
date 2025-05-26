@@ -78,7 +78,19 @@ class Vec2 implements IVec2 {
     }
 }
 
+const origin = new Vec2(0, 0);
+const up = new Vec2(0, 1);
+const down = new Vec2(0, -1);
+const left = new Vec2(-1, 0);
+const right = new Vec2(1, 0);
+
+
 export {
     IVec2,
-    Vec2
-}
+    Vec2,
+    origin,
+    up,
+    down,
+    left,
+    right
+};
