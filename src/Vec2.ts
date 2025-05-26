@@ -14,6 +14,13 @@ class Vec2 implements IVec2 {
         this.y = y;
     }
 
+    clamp(min: IVec2, max: IVec2): Vec2 {
+        return new Vec2(
+            Math.max(min.x, Math.min(max.x, this.x)),
+            Math.max(min.y, Math.min(max.y, this.y))
+        );
+    }
+
     divideBy(n: number): Vec2 {
         return new Vec2(this.x / n, this.y / n);
     }
