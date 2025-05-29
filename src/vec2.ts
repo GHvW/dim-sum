@@ -14,6 +14,13 @@ class Vec2 implements IVec2 {
         this.y = y;
     }
 
+    /**
+     * @returns The angle of the vector in radians, measured from the positive x-axis.
+     */
+    angle(): number {
+        return Math.atan2(this.y, this.x);
+    }
+
     clamp(min: IVec2, max: IVec2): Vec2 {
         return new Vec2(
             Math.max(min.x, Math.min(max.x, this.x)),
