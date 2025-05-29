@@ -6,6 +6,10 @@ declare class Vec2 implements IVec2 {
     x: number;
     y: number;
     constructor(x: number, y: number);
+    /**
+     * @returns The angle of the vector in radians, measured from the positive x-axis.
+     */
+    angle(): number;
     clamp(min: IVec2, max: IVec2): Vec2;
     divideBy(n: number): Vec2;
     dot(other: IVec2): number;
